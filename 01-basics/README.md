@@ -14,7 +14,7 @@ step 8 you've touched every skill the afternoon projects need.
 | [7](07-mask-measure.md) | Mask & measure | Sentinel-2 | [`07_mask_measure.js`](snippets/07_mask_measure.js) |
 | [8](08-export-share.md) | Export & share | (your result) | [`08_export_share.js`](snippets/08_export_share.js) |
 
-📄 Keep the **[cheatsheet](cheatsheet.md)** open in a tab.
+Keep the **[cheatsheet](cheatsheet.md)** open in a tab.
 
 **One rule to avoid confusion:** anything starting with `ee.` lives on Google's
 servers — talk to it with *methods* (`.add`, `.gt`, `.filterDate`), not plain `+`

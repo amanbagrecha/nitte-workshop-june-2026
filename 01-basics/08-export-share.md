@@ -18,4 +18,4 @@ your Drive — drag it into QGIS.
 **Share code:** *Get Link* (top bar). **Share a tool:** *Apps* → publish. You'll do
 both in the live demo next.
 
-✅ That's all 8 basics. → [Part 2 — Live Demo (NDVI)](../02-demo-ndvi/)
+That's all 8 basics. → [Part 2 — Live Demo (NDVI)](../02-demo-ndvi/)

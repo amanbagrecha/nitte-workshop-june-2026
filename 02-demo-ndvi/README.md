@@ -1,10 +1,10 @@
 # Part 2 — Live Demo: Vegetation Health with NDVI
 
-Watch one project built blank-script → published app. This is the **template** for
-your afternoon group project: same skeleton, different index.
+This demo builds one project end-to-end, from a blank script to a published app — the
+**template** for your afternoon group project: same skeleton, different index.
 
 **Area:** farmland and forest around **Udupi**. **Question:** *how green is it, how
-does that change through the year, and can I put it in a map anyone can open?*
+does that change through the year, and can it go on a map anyone can open?*
 
 Change two lines at the top — `aoi` and the dates — and it runs anywhere, any year.
 
@@ -19,7 +19,7 @@ Change two lines at the top — `aoi` and the dates — and it runs anywhere, an
 | 2.7 | Export for QGIS | `Export.image.toDrive` |
 | 2.8 | Publish an app | `ui.*` + Apps button |
 
-▶️ [`scripts/full_demo.js`](scripts/full_demo.js) · [`scripts/ndvi_app.js`](scripts/ndvi_app.js)
+[`scripts/full_demo.js`](scripts/full_demo.js) · [`scripts/ndvi_app.js`](scripts/ndvi_app.js)
 
 ---
 
@@ -32,7 +32,7 @@ var end   = '2024-12-31';
 Map.centerObject(aoi, 10);
 ```
 
-These are the **only** things students change to make the project their own.
+These are the **only** lines you change to make the project your own.
 
 ## 2.2 Clean imagery
 
@@ -51,7 +51,7 @@ var s2 = ee.ImageCollection('COPERNICUS/S2_SR_HARMONIZED')
   .map(maskS2);
 ```
 
-`.map(maskS2)` runs the cleaner on every image. Our first custom function: one image in, one image out.
+`.map(maskS2)` runs the cleaner on every image — the first custom function here: one image in, one image out.
 
 ## 2.3 NDVI
 
@@ -62,7 +62,7 @@ var ndvi = withNdvi.select('NDVI').median().clip(aoi);
 Map.addLayer(ndvi, {min: 0, max: 0.8, palette: ['white', 'yellow', 'green']}, 'NDVI');
 ```
 
-The same `normalizedDifference` from the morning — kept on every image so we can chart it later (2.6).
+The same `normalizedDifference` from the morning, kept on every image so it can be charted later (2.6).
 
 ## 2.4 Threshold → healthy vegetation
 
@@ -117,6 +117,6 @@ appears), then **Apps → New App** to get a public URL.
 
 ---
 
-**You just saw the whole pipeline:** area → clean imagery → index → threshold →
+**That is the whole pipeline:** area → clean imagery → index → threshold →
 measure → chart → export → app. Your project is the same skeleton.
 → [Pick your theme](../03-projects/)
