@@ -4,11 +4,11 @@ Teach the computer to label every pixel as **water, vegetation, built-up, or bar
 You give examples, a machine-learning classifier learns the pattern, and paints the
 whole map. This is the workhorse of remote sensing.
 
-📑 [reference sheet](reference.md) · ▶️ [`starter.js`](starter.js)
+[reference sheet](reference.md) · [`starter.js`](starter.js)
 
 ---
 
-## 🎯 The deliverable
+## The deliverable
 
 1. A **4-class LULC map** of the Mangaluru–Udupi belt that actually looks right.
 2. **One number**: either an **accuracy** figure (%) or the **built-up area** (km²).
@@ -16,7 +16,7 @@ whole map. This is the workhorse of remote sensing.
 
 ---
 
-## ▶️ Run the starter
+## Run the starter
 
 Paste [`starter.js`](starter.js) and Run. You'll get a classified map — and it will
 look **bad**. That's intentional: it learned from only ~7 points. The whole project
@@ -24,7 +24,7 @@ is making it good with *better training data*.
 
 ---
 
-## ✅ Your tasks
+## Your tasks
 
 1. **Collect real training data.** Use the map's **geometry tools** (top-left) to draw
    many points/polygons per class. Aim for 20–50 examples *per class*, spread out.
@@ -37,7 +37,7 @@ is making it good with *better training data*.
 
 ---
 
-## 💡 Hints (not the code)
+## Hints (not the code)
 
 - Draw training data: click a class colour in the **Imports** geometry tools, drop
   points on obvious examples, repeat per class. Import them as a `FeatureCollection`.
@@ -51,7 +51,7 @@ is making it good with *better training data*.
 
 ---
 
-## 🤖 Ask the AI well
+## Ask the AI well
 
 > "In the GEE **JavaScript** Code Editor I have a Sentinel-2 image and a
 > `FeatureCollection` of training points with a class property `lc`. Show me only the
@@ -64,7 +64,7 @@ result against true colour.
 
 ---
 
-## 🚀 Stretch goals
+## Stretch goals
 
 - Add a 5th/6th class (e.g. cropland vs forest, wetland).
 - Compare classifiers: `smileRandomForest` vs `smileCart` vs `smileGradientTreeBoost`.
@@ -72,7 +72,7 @@ result against true colour.
 
 ---
 
-## ⚠️ Watch out for
+## Watch out for
 
 - **Garbage in, garbage out** — bad/few training points = bad map. This is 80% of the work.
 - Training accuracy *lies* (it grades itself); only a held-out **test set** is honest.

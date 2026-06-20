@@ -3,14 +3,14 @@
 The Linganamakki reservoir swells after the monsoon and shrinks through summer. Map
 that surface water with **NDWI** and turn it into a story about water security.
 
-📑 [reference sheet](reference.md) · ▶️ [`starter.js`](starter.js)
+[reference sheet](reference.md) · [`starter.js`](starter.js)
 
 > This is the *same technique family* as the NDVI demo (a normalised-difference index
 > + threshold), but nobody built it live — so it's all yours.
 
 ---
 
-## 🎯 The deliverable
+## The deliverable
 
 1. A **map** of the reservoir's water at two times (e.g. driest vs fullest).
 2. **One number**: how much the water area (km²) **changed** between them.
@@ -18,14 +18,14 @@ that surface water with **NDWI** and turn it into a story about water security.
 
 ---
 
-## ▶️ Run the starter
+## Run the starter
 
 Paste [`starter.js`](starter.js) and Run — the post-monsoon reservoir in blue. It's a
 single snapshot with no measurement. The project is making it **seasonal and quantified**.
 
 ---
 
-## ✅ Your tasks
+## Your tasks
 
 1. **Add the dry season.** Make a second composite for **April–May** (lowest water) and
    map it too. The shrinkage should be obvious.
@@ -38,7 +38,7 @@ single snapshot with no measurement. The project is making it **seasonal and qua
 
 ---
 
-## 💡 Hints (not the code)
+## Hints (not the code)
 
 - `normalizedDifference(['B3','B8'])` = NDWI; `['B3','B11']` = MNDWI (better vs built-up).
 - Threshold ≈ **0** for water; tune it with the **Inspector** on a known shoreline.
@@ -48,7 +48,7 @@ single snapshot with no measurement. The project is making it **seasonal and qua
 
 ---
 
-## 🤖 Ask the AI well
+## Ask the AI well
 
 > "In the GEE **JavaScript** Code Editor I have a Sentinel-2 composite. Show me only
 > the lines to compute MNDWI from `B3` and `B11`, threshold to a water mask, and
@@ -60,7 +60,7 @@ water vs land pixel with the Inspector.
 
 ---
 
-## 🚀 Stretch goals
+## Stretch goals
 
 - **Multi-year drought:** compare a normal year vs a drought year (e.g. 2023) — was the
   reservoir lower?
@@ -69,7 +69,7 @@ water vs land pixel with the Inspector.
 
 ---
 
-## ⚠️ Watch out for
+## Watch out for
 
 - **Cloud shadows read as water** — mask clouds or you'll over-count.
 - Terrain shadow in the Ghats can also mimic water; check suspicious dark patches.

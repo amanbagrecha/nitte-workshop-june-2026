@@ -17,7 +17,7 @@
 | `SR_B4` | Red (for NDVI) | `× 0.0000275 − 0.2` → reflectance |
 | `QA_PIXEL` | Quality bitmask | bit 3 = cloud, bit 4 = cloud shadow, bit 1 = dilated cloud, bit 2 = cirrus |
 
-> ⚠️ Always confirm these on the dataset's catalog page — don't trust an AI's numbers.
+> Always confirm these on the dataset's catalog page — don't trust an AI's numbers.
 
 ## Cloud mask pattern (fill in the bits)
 

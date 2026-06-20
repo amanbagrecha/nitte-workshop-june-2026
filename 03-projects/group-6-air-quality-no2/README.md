@@ -4,11 +4,11 @@ Sentinel-5P measures gases in the atmosphere from space. **NO₂** traces combus
 traffic, ports, refineries, power plants. You'll map where it concentrates around
 Mangaluru and how it changes over time.
 
-📑 [reference sheet](reference.md) · ▶️ [`starter.js`](starter.js)
+[reference sheet](reference.md) · [`starter.js`](starter.js)
 
 ---
 
-## 🎯 The deliverable
+## The deliverable
 
 1. A **map** of mean NO₂ showing the industrial/port hotspot vs cleaner surroundings.
 2. **One number or chart**: a trend (e.g. NO₂ over the year, or hotspot vs rural mean).
@@ -16,7 +16,7 @@ Mangaluru and how it changes over time.
 
 ---
 
-## ▶️ Run the starter
+## Run the starter
 
 Paste [`starter.js`](starter.js) and Run — a yearly-mean NO₂ map. The port/industrial
 belt should glow warmer than the Ghats. It's one static average; your job is to make
@@ -24,7 +24,7 @@ it *say something* over time and space.
 
 ---
 
-## ✅ Your tasks
+## Your tasks
 
 1. **Trend it.** Chart monthly mean NO₂ over your area across a year (or several) —
    any seasonal pattern? Any rising trend?
@@ -36,7 +36,7 @@ it *say something* over time and space.
 
 ---
 
-## 💡 Hints (not the code)
+## Hints (not the code)
 
 - The band is `tropospheric_NO2_column_number_density` (units **mol/m²** — tiny numbers,
   ~1e-5 to 2e-4).
@@ -47,7 +47,7 @@ it *say something* over time and space.
 
 ---
 
-## 🤖 Ask the AI well
+## Ask the AI well
 
 > "In the GEE **JavaScript** Code Editor, using `COPERNICUS/S5P/OFFL/L3_NO2` band
 > `tropospheric_NO2_column_number_density`, show me only the lines to chart monthly
@@ -59,7 +59,7 @@ it *say something* over time and space.
 
 ---
 
-## 🚀 Stretch goals
+## Stretch goals
 
 - Swap in other S5P gases: **CO**, **SO₂**, **O₃**, or the **Aerosol Index** (AER_AI).
 - Weekday vs weekend NO₂ (traffic signal).
@@ -67,7 +67,7 @@ it *say something* over time and space.
 
 ---
 
-## ⚠️ Watch out for
+## Watch out for
 
 - **Very coarse pixels (~7 km).** Mangaluru is only a few pixels — don't claim
   street-level detail.

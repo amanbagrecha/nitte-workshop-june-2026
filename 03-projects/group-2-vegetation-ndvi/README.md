@@ -3,12 +3,12 @@
 You saw NDVI in the live demo. Your job is the **harder twist**: don't just map
 greenness *once* — show how it **changes** between seasons or years, and quantify it.
 
-📑 [reference sheet](reference.md) · ▶️ [`starter.js`](starter.js) ·
-🧱 builds on [`../../02-demo-ndvi/`](../../02-demo-ndvi/)
+[reference sheet](reference.md) · [`starter.js`](starter.js) ·
+builds on [`../../02-demo-ndvi/`](../../02-demo-ndvi/)
 
 ---
 
-## 🎯 The deliverable
+## The deliverable
 
 1. A **map** of NDVI *change* (greening vs browning) over your area.
 2. **One number**: the area (km²) that **lost** vegetation (or the crop-season NDVI swing).
@@ -21,7 +21,7 @@ Pick **one** angle:
 
 ---
 
-## ▶️ Run the starter
+## Run the starter
 
 Paste [`starter.js`](starter.js) and Run — a red/green map of NDVI change 2019→2024.
 Green = gained vegetation, red = lost. That's your starting point; it has no number
@@ -29,7 +29,7 @@ and no cloud-season control yet.
 
 ---
 
-## ✅ Your tasks
+## Your tasks
 
 1. **Quantify the browning.** Threshold the change (e.g. `dNDVI < -0.1`), mask, and
    measure the area in km².
@@ -43,7 +43,7 @@ and no cloud-season control yet.
 
 ---
 
-## 💡 Hints (not the code)
+## Hints (not the code)
 
 - The starter's `yearNDVI(y)` already makes a clean yearly NDVI — call it twice with
   different years/seasons and `.subtract()`.
@@ -55,7 +55,7 @@ and no cloud-season control yet.
 
 ---
 
-## 🤖 Ask the AI well
+## Ask the AI well
 
 > "In the GEE **JavaScript** Code Editor I have two NDVI images (`ee.Image`, band
 > `NDVI`) for 2019 and 2024. Show me only the lines to flag pixels that dropped more
@@ -66,7 +66,7 @@ Inspector on a known cleared patch vs untouched forest — do the numbers make s
 
 ---
 
-## 🚀 Stretch goals
+## Stretch goals
 
 - A proper **crop calendar**: monthly NDVI curve for one paddy field — spot sowing/harvest.
 - Mask to *farmland only* using ESA WorldCover class `40` (cropland) before charting.
@@ -74,7 +74,7 @@ Inspector on a known cleared patch vs untouched forest — do the numbers make s
 
 ---
 
-## ⚠️ Watch out for
+## Watch out for
 
 - **Clouds masquerade as browning.** A bad composite in one year fakes "loss" — always
   sanity-check against true colour.

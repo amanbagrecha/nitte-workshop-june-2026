@@ -4,11 +4,11 @@ Monsoon floods hide under thick cloud — useless for optical satellites. **Rada
 (Sentinel-1) sees straight through cloud**, and calm floodwater bounces the signal
 away, so it shows up **dark**. You'll map a flood by comparing *before* vs *during*.
 
-📑 [reference sheet](reference.md) · ▶️ [`starter.js`](starter.js)
+[reference sheet](reference.md) · [`starter.js`](starter.js)
 
 ---
 
-## 🎯 The deliverable
+## The deliverable
 
 1. A **map** of flooded land for a real event (new water that wasn't there before).
 2. **One number**: flooded area in km².
@@ -16,7 +16,7 @@ away, so it shows up **dark**. You'll map a flood by comparing *before* vs *duri
 
 ---
 
-## ▶️ Run the starter
+## Run the starter
 
 Paste [`starter.js`](starter.js) and Run — a grey SAR image where the Netravati
 river reads dark. That confirms the radar data loads over your area. **There's no
@@ -24,7 +24,7 @@ flood in it yet** — the whole task is the before/after comparison.
 
 ---
 
-## ✅ Your tasks
+## Your tasks
 
 1. **Pick a real flood.** Find an event (e.g. the **August 2019** Karnataka monsoon
    floods, or **Kerala, August 2018**). You need a **before** window and a **during** window.
@@ -38,7 +38,7 @@ flood in it yet** — the whole task is the before/after comparison.
 
 ---
 
-## 💡 Hints (not the code)
+## Hints (not the code)
 
 - SAR is in **decibels (dB)**; water is roughly below **−18 to −20 dB** on VH.
 - **Speckle** (radar grain) is noisy — smooth with `img.focal_median(...)` before thresholding.
@@ -50,7 +50,7 @@ flood in it yet** — the whole task is the before/after comparison.
 
 ---
 
-## 🤖 Ask the AI well
+## Ask the AI well
 
 > "In the GEE **JavaScript** Code Editor I have two `COPERNICUS/S1_GRD` VH composites,
 > `before` and `flood` (dB). Show me only the lines to flag new floodwater by ratio
@@ -62,7 +62,7 @@ from news photos — does it line up?
 
 ---
 
-## 🚀 Stretch goals
+## Stretch goals
 
 - Animate VH through a monsoon to watch water rise and recede.
 - Cross-check your flood extent against a population or built-up layer: who was exposed?
@@ -70,7 +70,7 @@ from news photos — does it line up?
 
 ---
 
-## ⚠️ Watch out for
+## Watch out for
 
 - **Mix orbits and you get garbage** — ascending and descending look different; pick one.
 - Wind-roughened water and wet soil also look dark → false positives. Be honest about it.

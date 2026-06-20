@@ -4,11 +4,11 @@ Built-up land soaks up sun and re-radiates it: city cores run hotter than their
 green, watery surroundings. You'll map that temperature gap over Mangaluru from
 Landsat's thermal band.
 
-📑 One-page [reference sheet](reference.md) · ▶️ [`starter.js`](starter.js)
+One-page [reference sheet](reference.md) · [`starter.js`](starter.js)
 
 ---
 
-## 🎯 The deliverable
+## The deliverable
 
 By end of day, hand in:
 
@@ -19,7 +19,7 @@ By end of day, hand in:
 
 ---
 
-## ▶️ Run the starter
+## Run the starter
 
 Paste [`starter.js`](starter.js) and Run. You should get a blue→red heat map of
 Mangaluru. That proves your area, the Landsat dataset, and the °C conversion all
@@ -28,7 +28,7 @@ That's your job.
 
 ---
 
-## ✅ Your tasks
+## Your tasks
 
 1. **Mask clouds properly.** The starter only drops *very cloudy scenes*; individual
    cloud pixels still sneak through and read as cold spots. Mask them per-pixel.
@@ -43,7 +43,7 @@ That's your job.
 
 ---
 
-## 💡 Hints (not the code)
+## Hints (not the code)
 
 - **Cloud mask:** Landsat C2 L2 carries a `QA_PIXEL` band. The cloud / cloud-shadow
   flags are individual *bits* — look up `bitwiseAnd` and `updateMask`. (Verify the bit
@@ -64,7 +64,7 @@ You already used *every* one of these moves in the morning — this is reassembl
 
 ---
 
-## 🤖 Ask the AI well
+## Ask the AI well
 
 Good prompts name the **platform**, the **exact dataset**, and **one small step**:
 
@@ -90,7 +90,7 @@ Good prompts name the **platform**, the **exact dataset**, and **one small step*
 
 ---
 
-## 🚀 Stretch goals
+## Stretch goals
 
 - **Then vs now:** compare a pre-monsoon composite from ~2014 (Landsat 8) with 2024.
   Did the hot area grow as the city did? (Tie-in with Group 7, night lights.)
@@ -99,7 +99,7 @@ Good prompts name the **platform**, the **exact dataset**, and **one small step*
 
 ---
 
-## ⚠️ Watch out for
+## Watch out for
 
 - **LST ≠ air temperature.** It's the *surface* (rooftops, roads) — say so in your writeup.
 - Thermal data is coarse (~100 m, resampled to 30 m). Don't over-interpret tiny features.
