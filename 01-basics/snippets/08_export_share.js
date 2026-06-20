@@ -4,4 +4,4 @@ var ndvi = ee.ImageCollection('COPERNICUS/S2_SR_HARMONIZED')
   .filterBounds(aoi).filterDate(start, end)
   .filter(ee.Filter.lt('CLOUDY_PIXEL_PERCENTAGE', 20)).median()
   .normalizedDifference(['B8', 'B4']).rename('NDVI').clip(aoi);
-Export.image.toDrive({image: ndvi, description: 'Udupi_NDVI', region: aoi, scale: 20, maxPixels: 1e13});
+Export.image.toDrive({image: ndvi, description: 'Udupi_NDVI', region: aoi, scale: 20, crs: 'EPSG:4326', maxPixels: 1e13});

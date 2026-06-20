@@ -9,7 +9,7 @@ var ndvi = ee.ImageCollection('COPERNICUS/S2_SR_HARMONIZED')
   .filterBounds(aoi).filterDate('2024-01-01', '2024-04-30')
   .filter(ee.Filter.lt('CLOUDY_PIXEL_PERCENTAGE', 20)).median()
   .normalizedDifference(['B8', 'B4']).rename('NDVI').clip(aoi);
-Export.image.toDrive({image: ndvi, description: 'Udupi_NDVI', region: aoi, scale: 20, maxPixels: 1e13});
+Export.image.toDrive({image: ndvi, description: 'Udupi_NDVI', region: aoi, scale: 20, crs: 'EPSG:4326', maxPixels: 1e13});
 ```
 
 Run it, then open the **Tasks** tab (right) and click **Run**. The `.tif` lands in
