@@ -84,11 +84,23 @@ A map is nice; a number is publishable.
 ## 2.6 Chart through the year
 
 ```js
-print(ui.Chart.image.series(withNdvi.select('NDVI'), aoi, ee.Reducer.mean(), 200)
+// keep only scenes that actually cover the AOI, so each point is comparable
+var aoiArea = aoi.area(100);
+var covered = withNdvi.map(function (img) {
+  var valid = img.select('NDVI').mask().multiply(ee.Image.pixelArea())
+    .reduceRegion({reducer: ee.Reducer.sum(), geometry: aoi, scale: 100, maxPixels: 1e13})
+    .getNumber('NDVI');
+  return img.set('cover', valid.divide(aoiArea));   // fraction of AOI with data
+}).filter(ee.Filter.gt('cover', 0.9));              // drop partial-coverage scenes
+
+print(ui.Chart.image.series(covered.select('NDVI'), aoi, ee.Reducer.mean(), 200)
   .setOptions({title: 'Mean NDVI over time — Udupi', vAxis: {title: 'NDVI'}}));
 ```
 
-The green-up after the June monsoon is the whole story in one line.
+The green-up after the June monsoon is the whole story in one line. We drop
+**partial-coverage scenes** first (a Sentinel-2 pass that clips only a corner of the
+AOI would otherwise plot a spike — its average is over just that sliver, not the
+whole region).
 
 ## 2.7 Export for QGIS
 

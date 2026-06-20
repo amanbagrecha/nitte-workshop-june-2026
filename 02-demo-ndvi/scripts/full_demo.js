@@ -32,9 +32,17 @@ var km2 = veg.multiply(ee.Image.pixelArea()).divide(1e6)
   .reduceRegion({reducer: ee.Reducer.sum(), geometry: aoi, scale: 20, maxPixels: 1e13});
 print('Healthy vegetation km2:', km2.get('NDVI'));
 
-// 2.6 Chart NDVI through the year
-print(ui.Chart.image.series(withNdvi.select('NDVI'), aoi, ee.Reducer.mean(), 200)
-  .setOptions({title: 'Mean NDVI over time - Udupi', vAxis: {title: 'NDVI'}, hAxis: {title: 'Date'}}));
+// 2.6 Chart NDVI through the year - keep only scenes that actually cover the AOI
+var aoiArea = aoi.area(100);
+var covered = withNdvi.map(function (img) {
+  var valid = img.select('NDVI').mask().multiply(ee.Image.pixelArea())
+    .reduceRegion({reducer: ee.Reducer.sum(), geometry: aoi, scale: 100, maxPixels: 1e13})
+    .getNumber('NDVI');
+  return img.set('cover', valid.divide(aoiArea));   // fraction of AOI with valid data
+}).filter(ee.Filter.gt('cover', 0.9));              // drop partial-coverage scenes
+
+print(ui.Chart.image.series(covered.select('NDVI'), aoi, ee.Reducer.mean(), 200)
+  .setOptions({title: 'Mean NDVI over time - Udupi (well-covered scenes)', vAxis: {title: 'NDVI'}, hAxis: {title: 'Date'}}));
 
 // 2.7 Export for QGIS  (then Tasks tab -> Run)
 Export.image.toDrive({image: ndvi, description: 'Udupi_NDVI', region: aoi, scale: 20, maxPixels: 1e13});
