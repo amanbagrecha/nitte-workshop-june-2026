@@ -4,6 +4,8 @@ A one-day, browser-only introduction to Google Earth Engine, with worked example
 anchored in coastal Karnataka. Everything runs in the **JavaScript Code Editor** at
 <https://code.earthengine.google.com> — nothing to install.
 
+Link to add code to your repository - https://code.earthengine.google.com/?accept_repo=users/jainaman588/nitte-workshop-2026
+
 ## Start here
 
 1. **Set up** your Earth Engine account and tour the editor → [`00-setup/`](00-setup/)
